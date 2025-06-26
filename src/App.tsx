@@ -11,6 +11,7 @@ const Services = lazy(() => import('./components/Services'));
 const Projects = lazy(() => import('./components/Projects'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Team = lazy(() => import('./components/Team'));
+const News = lazy(() => import('./components/News'));
 const Blog = lazy(() => import('./components/Blog'));
 const Footer = lazy(() => import('./components/Footer'));
 
@@ -27,6 +28,7 @@ function App() {
             <Projects />
             <Testimonials />
             <Team />
+            <News />
             <Blog />
           </main>
           <Footer />
