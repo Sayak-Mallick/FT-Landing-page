@@ -84,6 +84,7 @@ export default {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
+        'spin-reverse': 'spin 1s linear infinite reverse',
       },
       keyframes: {
         fadeIn: {
