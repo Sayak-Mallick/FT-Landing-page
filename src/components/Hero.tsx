@@ -27,37 +27,37 @@ const Hero: React.FC = () => {
       <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
-          <div className="text-white">
-            <div className="flex items-center space-x-4 mb-6">
+          <div className="text-white animate-[fadeUp_1s_ease-out_0.2s_both]">
+            <div className="flex items-center space-x-4 mb-6 animate-[fadeUp_1s_ease-out_0.4s_both]">
               <div className="w-12 h-0.5 bg-white"></div>
               <span className="text-lg font-medium">Software Agency</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-[fadeUp_1s_ease-out_0.6s_both]">
               Empowering Your Future with{' '}
               <span className="text-accent-400">Cutting-Edge</span>{' '}
               Software Solutions
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-300 mb-6">
+            <p className="text-xl md:text-2xl text-gray-300 mb-6 animate-[fadeUp_1s_ease-out_0.8s_both]">
               Innovative. Reliable. Tailored to your success.
             </p>
 
-            <p className="text-lg text-gray-400 mb-8 max-w-2xl">
+            <p className="text-lg text-gray-400 mb-8 max-w-2xl animate-[fadeUp_1s_ease-out_1s_both]">
               We believe technology should simplify, elevate, and transform your business.
               As a forward-thinking software service provider, we blend creativity with
               engineering excellence to deliver solutions that not only meet today's needs
               but also anticipate tomorrow's challenges.
             </p>
 
-            <button className="bg-white text-primary-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2">
+            <button className="bg-white text-primary-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2 animate-[fadeUp_1s_ease-out_1.2s_both]">
               <span>Learn More</span>
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
 
           {/* Right Content - Image and CTA Card */}
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-8 animate-[fadeUp_1s_ease-out_0.4s_both]">
             {/* Hero Image */}
             <img
               src={heroImg}
