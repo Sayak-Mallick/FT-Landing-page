@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Swiper Styles */
+.team-swiper {
+  padding: 0 20px 40px 20px;
+}
+
+.team-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.team-swiper .swiper-slide > div {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom scrollbar for better visual appeal */
+.team-swiper .swiper-scrollbar {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 4px;
+}
+
+.team-swiper .swiper-scrollbar-drag {
+  background-color: #1f2937;
+}
