@@ -5,15 +5,15 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg")',
+          backgroundImage: 'url("/src/assets/images/hero-background.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       />
-      
+
       {/* Gradient Overlay - reduced opacity from 95 to 90 */}
       <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary-900/90 via-primary-800/90 to-secondary-900/90" />
 
@@ -30,24 +30,24 @@ const Hero: React.FC = () => {
               <div className="w-12 h-0.5 bg-white"></div>
               <span className="text-lg font-medium">Software Agency</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Empowering Your Future with{' '}
               <span className="text-accent-400">Cutting-Edge</span>{' '}
               Software Solutions
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-300 mb-6">
               Innovative. Reliable. Tailored to your success.
             </p>
-            
+
             <p className="text-lg text-gray-400 mb-8 max-w-2xl">
-              We believe technology should simplify, elevate, and transform your business. 
-              As a forward-thinking software service provider, we blend creativity with 
-              engineering excellence to deliver solutions that not only meet today's needs 
+              We believe technology should simplify, elevate, and transform your business.
+              As a forward-thinking software service provider, we blend creativity with
+              engineering excellence to deliver solutions that not only meet today's needs
               but also anticipate tomorrow's challenges.
             </p>
-            
+
             <button className="bg-white text-primary-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2">
               <span>Learn More</span>
               <ArrowRight className="w-5 h-5" />
@@ -57,17 +57,11 @@ const Hero: React.FC = () => {
           {/* Right Content - Image and CTA Card */}
           <div className="flex flex-col space-y-8">
             {/* Hero Image */}
-            <div className="relative">
-              <div className="absolute -right-8 -top-8 w-[120%] h-[120%] bg-white/80 rounded-full blur-2xl"></div>
-              <div className="relative">
-                <img 
-                  src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg"
-                  alt="Professional businessman"
-                  className="rounded-2xl w-full h-[500px] object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-900/20 to-transparent rounded-2xl"></div>
-              </div>
-            </div>
+            <img
+              src="/src/assets/images/hero.png"
+              alt="Professional businessman"
+              className="rounded-2xl w-4/5 h-100 object-cover object-top mx-auto"
+            />
 
             {/* CTA Card */}
             <div className="bg-white rounded-2xl p-8 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-300">
