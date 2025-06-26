@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
+import heroBackgroundImg from '../assets/images/hero-background.png';
+import heroImg from '../assets/images/hero.png';
 
 const Hero: React.FC = () => {
   return (
@@ -8,7 +10,7 @@ const Hero: React.FC = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("/src/assets/images/hero-background.png")',
+          backgroundImage: `url("${heroBackgroundImg}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -58,7 +60,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col space-y-8">
             {/* Hero Image */}
             <img
-              src="/src/assets/images/hero.png"
+              src={heroImg}
               alt="Professional businessman"
               className="rounded-2xl w-4/5 h-100 object-cover object-top mx-auto"
             />

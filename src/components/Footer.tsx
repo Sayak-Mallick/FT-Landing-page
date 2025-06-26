@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Facebook, Linkedin, Twitter, Mail } from 'lucide-react';
+import logoImg from '../assets/images/logo.png';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
                   <img 
-                    src="/src/assets/images/logo.png" 
+                    src={logoImg} 
                     alt="Future Transformations Logo" 
                     className="w-8 h-8 object-contain"
                   />

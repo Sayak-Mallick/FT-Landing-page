@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { toggleMobileMenu, closeMobileMenu } from '../store/slices/uiSlice';
+import logoImg from '../assets/images/logo.png';
 
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -42,7 +43,7 @@ const Header: React.FC = () => {
           <div className="flex items-center space-x-3">
             <div className={`w-12 h-12 ${isScrolled ? 'bg-white shadow-md' : 'bg-primary backdrop-blur-sm'} rounded-xl flex items-center justify-center transition-all duration-300`}>
               <img 
-                src="/src/assets/images/logo.png" 
+                src={logoImg} 
                 alt="Future Transformations Logo" 
                 className="w-16 h-16 object-contain"
               />
