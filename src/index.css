@@ -39,3 +39,56 @@
 .team-swiper .swiper-scrollbar-drag {
   background-color: #1f2937;
 }
+
+/* Custom Services Slider Styles */
+.services-slider {
+  padding: 0 20px 40px 20px;
+}
+
+.services-slider .swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.services-slider .swiper-slide > div {
+  width: 100%;
+  height: 100%;
+}
+
+.services-slider .swiper-button-next,
+.services-slider .swiper-button-prev {
+  color: #593FFB;
+  background: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.services-slider .swiper-button-next:hover,
+.services-slider .swiper-button-prev:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.services-slider .swiper-button-next::after,
+.services-slider .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.services-slider .swiper-pagination {
+  bottom: -40px;
+}
+
+.services-slider .swiper-pagination-bullet {
+  background: #593FFB;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.services-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+}

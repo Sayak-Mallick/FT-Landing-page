@@ -1,4 +1,9 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -29,8 +34,39 @@ const News: React.FC = () => {
   const services = [
     {
       id: 1,
-      title: "AI services",
-      description: "Leverage agile framework to provide a robust high level synopsis overviews",
+      title: "Website Designing",
+      description: "Create stunning, responsive websites that captivate your audience and drive engagement",
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.4" d="M31.6667 8.33337V31.6667C31.6667 35 28.3333 35 28.3333 35H11.6667C8.33333 35 8.33333 31.6667 8.33333 31.6667V8.33337C8.33333 5.00004 11.6667 5.00004 11.6667 5.00004H28.3333C31.6667 5.00004 31.6667 8.33337 31.6667 8.33337Z" fill="#593FFB" />
+          <path d="M8.33333 13.3334H31.6667" stroke="#593FFB" strokeWidth="2" strokeLinecap="round" />
+          <path d="M13.3333 25H26.6667" stroke="#593FFB" strokeWidth="2" strokeLinecap="round" />
+          <path d="M13.3333 28.3334H23.3333" stroke="#593FFB" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="13.3333" cy="9.16671" r="1.66667" fill="#593FFB" />
+          <circle cx="16.6667" cy="9.16671" r="1.66667" fill="#593FFB" />
+          <circle cx="20" cy="9.16671" r="1.66667" fill="#593FFB" />
+        </svg>
+      )
+    },
+    {
+      id: 2,
+      title: "Web Development",
+      description: "Build powerful, scalable web applications with modern technologies and best practices",
+      icon: (
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.4" d="M31.6667 17.1333V29.05C31.6167 33.8 30.3167 35 25.3667 35H9.63342C4.60009 35 3.33337 33.75 3.33337 28.7833V17.1333C3.33337 12.6333 4.38337 11.1833 8.33337 10.95C8.73337 10.9333 9.16676 10.9166 9.63342 10.9166H25.3667C30.4 10.9166 31.6667 12.1666 31.6667 17.1333Z" fill="#80CC28" />
+          <path d="M36.6667 11.2167V22.8667C36.6667 27.3667 35.6167 28.8167 31.6667 29.05V17.1333C31.6667 12.1667 30.4 10.9167 25.3667 10.9167H9.63342C9.16676 10.9167 8.73337 10.9333 8.33337 10.95C8.38337 6.2 9.68342 5 14.6334 5H30.3667C35.4 5 36.6667 6.25 36.6667 11.2167Z" fill="#80CC28" />
+          <path d="M11.6 30.9333H8.73328C8.04994 30.9333 7.48328 30.3667 7.48328 29.6833C7.48328 29 8.04994 28.4333 8.73328 28.4333H11.6C12.2833 28.4333 12.85 29 12.85 29.6833C12.85 30.3667 12.3 30.9333 11.6 30.9333Z" fill="#80CC28" />
+          <path d="M20.9167 30.9333H15.1833C14.5 30.9333 13.9333 30.3667 13.9333 29.6833C13.9333 29 14.5 28.4333 15.1833 28.4333H20.9167C21.6 28.4333 22.1667 29 22.1667 29.6833C22.1667 30.3667 21.6167 30.9333 20.9167 30.9333Z" fill="#80CC28" />
+          <path d="M31.6667 19.7666H3.33337V22.2666H31.6667V19.7666Z" fill="#80CC28" />
+        </svg>
+      ),
+      bgColor: 'bg-gray-50'
+    },
+    {
+      id: 3,
+      title: "AI Solutions",
+      description: "Leverage cutting-edge AI technology to automate processes and enhance user experiences",
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.4" d="M35.6166 18.9833V28.9666C35.6166 33.5666 31.8833 37.2999 27.2833 37.2999H12.7166C8.11663 37.2999 4.3833 33.5666 4.3833 28.9666V19.0999C5.64997 20.4666 7.44997 21.2499 9.39997 21.2499C11.5 21.2499 13.5166 20.1999 14.7833 18.5166C15.9166 20.1999 17.85 21.2499 20 21.2499C22.1333 21.2499 24.0333 20.2499 25.1833 18.5833C26.4666 20.2333 28.45 21.2499 30.5166 21.2499C32.5333 21.2499 34.3666 20.4333 35.6166 18.9833Z" fill="#593FFB" />
@@ -42,7 +78,7 @@ const News: React.FC = () => {
       )
     },
     {
-      id: 2,
+      id: 4,
       title: "Software development",
       description: "Bring to the table survival strategies to ensure proactive domination",
       icon: (
@@ -57,7 +93,7 @@ const News: React.FC = () => {
       bgColor: 'bg-gray-50'
     },
     {
-      id: 3,
+      id: 5,
       title: "DevOps",
       description: "Grow the holistic world view of disruptive innovation workspace",
       icon: (
@@ -87,18 +123,43 @@ const News: React.FC = () => {
             </p>
           </div>
 
-          {/* Services Cards Grid */}
+          {/* Services Cards Slider */}
           <div className="flex-1 max-w-4xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service) => (
-                <ServiceCard
-                  key={service.id}
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  bgColor={service.bgColor}
-                />
-              ))}
+            <div className="pb-12">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={24}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                }}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
+                className="services-slider"
+              >
+                {services.map((service) => (
+                  <SwiperSlide key={service.id}>
+                    <ServiceCard
+                      icon={service.icon}
+                      title={service.title}
+                      description={service.description}
+                      bgColor={service.bgColor}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

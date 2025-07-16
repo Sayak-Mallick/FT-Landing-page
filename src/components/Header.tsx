@@ -41,11 +41,11 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className={`w-12 h-12 ${isScrolled ? 'bg-white shadow-md' : 'bg-primary backdrop-blur-sm'} rounded-xl flex items-center justify-center transition-all duration-300`}>
+            <div className={`w-16 h-16 ${isScrolled ? 'bg-white shadow-md' : 'bg-primary backdrop-blur-sm'} rounded-xl flex items-center justify-center transition-all duration-300`}>
               <img 
                 src={logoImg} 
                 alt="Future Transformations Logo" 
-                className="w-16 h-16 object-contain"
+                className="w-20 h-20 object-contain"
               />
             </div>
             {/* <span className={`text-xl font-bold ${isScrolled ? 'text-primary-900' : 'text-white'} transition-colors duration-300`}>Future Transformations</span> */}

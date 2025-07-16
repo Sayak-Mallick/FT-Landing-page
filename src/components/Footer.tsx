@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer className="text-white" style={{ backgroundColor: '#000D9ACC' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -30,11 +30,11 @@ const Footer: React.FC = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg">
                   <img 
                     src={logoImg} 
                     alt="Future Transformations Logo" 
-                    className="w-8 h-8 object-contain"
+                    className="w-20 h-20 object-contain"
                   />
                 </div>
                 <span className="text-white text-xl font-bold">Future Transformations</span>

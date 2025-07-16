@@ -7,7 +7,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 const Header = lazy(() => import('./components/Header'));
 const Hero = lazy(() => import('./components/Hero'));
 const About = lazy(() => import('./components/About'));
-const Services = lazy(() => import('./components/Services'));
+// const Services = lazy(() => import('./components/Services'));
 const Projects = lazy(() => import('./components/Projects'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const Team = lazy(() => import('./components/Team'));
@@ -24,11 +24,11 @@ function App() {
           <main>
             <Hero />
             <About />
-            <Services />
+            <News />
+            {/* <Services /> */}
             <Projects />
             <Testimonials />
             <Team />
-            <News />
             <Blog />
           </main>
           <Footer />
