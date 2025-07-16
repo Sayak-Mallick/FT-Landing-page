@@ -23,44 +23,44 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="text-white" style={{ backgroundColor: '#000D9ACC' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-responsive">
         {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid lg:grid-cols-4 gap-8">
+        <div className="section-padding">
+          <div className="footer-grid">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg">
+              <div className="flex items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
+                <div className="logo-responsive bg-white rounded-xl flex items-center justify-center shadow-lg">
                   <img 
                     src={logoImg} 
                     alt="Future Transformations Logo" 
-                    className="w-20 h-20 object-contain"
+                    className="logo-img-responsive object-contain"
                   />
                 </div>
-                <span className="text-white text-xl font-bold">Future Transformations</span>
+                <span className="text-white text-lg sm:text-xl font-bold">Future Transformations</span>
               </div>
-              <p className="text-gray-300 mb-6 max-w-md">
+              <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6">
                 Empowering businesses worldwide with cutting-edge software solutions. 
                 We blend creativity with engineering excellence to deliver transformative results.
               </p>
               
               {/* Newsletter Signup */}
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
-                <form onSubmit={handleNewsletterSubmit} className="flex">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Stay Updated</h3>
+                <form onSubmit={handleNewsletterSubmit} className="footer-newsletter">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent-400"
+                    className="flex-1 px-3 py-2 sm:px-4 sm:py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent-400 text-sm sm:text-base"
                     required
                   />
                   <button
                     type="submit"
-                    className="bg-accent-500 hover:bg-accent-600 px-6 py-3 rounded-r-lg transition-colors duration-200 flex items-center"
+                    className="bg-accent-500 hover:bg-accent-600 px-4 py-2 sm:px-6 sm:py-3 rounded-r-lg transition-colors duration-200 flex items-center"
                   >
-                    <Mail className="w-5 h-5" />
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </form>
               </div>
@@ -68,13 +68,13 @@ const Footer: React.FC = () => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-              <ul className="space-y-4">
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Quick Links</h3>
+              <ul className="space-y-3 sm:space-y-4">
                 {navigation.map((item) => (
                   <li key={item.name}>
                     <a
                       href={item.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                     >
                       {item.name}
                     </a>
@@ -85,8 +85,8 @@ const Footer: React.FC = () => {
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
-              <div className="space-y-4 text-gray-300">
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Contact Info</h3>
+              <div className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base">
                 <p>
                   <strong className="text-white">Phone:</strong><br />
                   +91-9433549417
@@ -106,13 +106,13 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="border-t border-primary-800 py-8">
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+        <div className="border-t border-primary-800 py-6 sm:py-8">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-3 sm:space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200"
+                className="text-gray-300 hover:text-white transition-colors duration-200 text-sm sm:text-base"
               >
                 {item.name}
               </a>
@@ -121,31 +121,31 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-primary-800 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+        <div className="border-t border-primary-800 py-4 sm:py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 sm:space-y-4 md:space-y-0">
+            <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
               © {new Date().getFullYear()} Future Transformations. All rights reserved.
             </p>
             
             {/* Social Links */}
-            <div className="flex space-x-4 mt-4 md:mt-0">
+            <div className="flex space-x-3 sm:space-x-4">
               <a
                 href="#"
-                className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
               >
-                <Facebook className="w-4 h-4 text-white" />
+                <Facebook className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </a>
               <a
                 href="#"
-                className="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-900 transition-colors"
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-900 transition-colors"
               >
-                <Linkedin className="w-4 h-4 text-white" />
+                <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </a>
               <a
                 href="#"
-                className="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
+                className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
               >
-                <Twitter className="w-4 h-4 text-white" />
+                <Twitter className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </a>
             </div>
           </div>

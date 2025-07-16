@@ -48,18 +48,18 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="section-padding bg-white">
+      <div className="container-responsive">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary-600 text-xl font-medium mb-4 block">Our Projects</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="text-primary-600 text-lg sm:text-xl font-medium mb-3 sm:mb-4 block">Our Projects</span>
+          <h2 className="text-section-title font-bold text-gray-900 mb-4 sm:mb-6">
             Recently Completed Creative Works
           </h2>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="projects-grid">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -69,30 +69,30 @@ const Projects: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-primary-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="flex space-x-4">
-                    <button className="bg-white text-primary-900 p-3 rounded-full hover:bg-gray-100 transition-colors">
-                      <Eye className="w-5 h-5" />
+                  <div className="flex space-x-3 sm:space-x-4">
+                    <button className="bg-white text-primary-900 p-2 sm:p-3 rounded-full hover:bg-gray-100 transition-colors">
+                      <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
-                    <button className="bg-white text-primary-900 p-3 rounded-full hover:bg-gray-100 transition-colors">
-                      <ExternalLink className="w-5 h-5" />
+                    <button className="bg-white text-primary-900 p-2 sm:p-3 rounded-full hover:bg-gray-100 transition-colors">
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
                   </div>
                 </div>
               </div>
               
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-primary-600 text-sm font-medium bg-primary-50 px-3 py-1 rounded-full">
+              <div className="p-4 sm:p-6">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <span className="text-primary-600 text-xs sm:text-sm font-medium bg-primary-50 px-2 sm:px-3 py-1 rounded-full">
                     {project.category}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm sm:text-base">
                   {project.description}
                 </p>
               </div>
@@ -101,8 +101,8 @@ const Projects: React.FC = () => {
         </div>
 
         {/* View More Button */}
-        <div className="text-center mt-12">
-          <button className="bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-colors duration-300 transform hover:scale-105">
+        <div className="text-center mt-8 sm:mt-12">
+          <button className="bg-primary-600 text-white btn-responsive hover:bg-primary-700 transition-colors duration-300 transform hover:scale-105">
             View All Projects
           </button>
         </div>

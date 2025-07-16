@@ -42,26 +42,26 @@ const Testimonials: React.FC = () => {
   const currentTest = testimonials[currentTestimonial];
 
   return (
-    <section className="py-20 bg-purple-50/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-purple-50/30">
+      <div className="container-responsive">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary-600 text-xl font-medium mb-4 block">Our Testimonials</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="text-primary-600 text-lg sm:text-xl font-medium mb-3 sm:mb-4 block">Our Testimonials</span>
+          <h2 className="text-section-title font-bold text-gray-900">
             What Our Clients Say?
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid-responsive-1-2 items-center">
           {/* Left Side - Client Images */}
-          <div className="relative">
-            <div className="relative w-96 h-96 mx-auto">
+          <div className="relative mb-8 lg:mb-0">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 mx-auto">
               {/* Outer circles */}
               <div className="absolute inset-0 border-2 border-gray-200 rounded-full"></div>
-              <div className="absolute inset-4 border border-gray-300 rounded-full"></div>
+              <div className="absolute inset-2 sm:inset-4 border border-gray-300 rounded-full"></div>
               
               {/* Main client image */}
-              <div className="absolute inset-16 rounded-full overflow-hidden">
+              <div className="absolute inset-8 sm:inset-12 lg:inset-16 rounded-full overflow-hidden">
                 <img
                   src={currentTest.image}
                   alt={currentTest.name}
@@ -70,70 +70,97 @@ const Testimonials: React.FC = () => {
               </div>
 
               {/* Quote icon */}
-              <div className="absolute bottom-8 right-8 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
-                <Quote className="w-8 h-8 text-primary-600" />
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-purple-100 rounded-full flex items-center justify-center">
+                <Quote className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-primary-600" />
               </div>
 
-              {/* Surrounding client images */}
-              {testimonials.map((testimonial, index) => {
-                if (index === currentTestimonial) return null;
-                const angle = (index * 120) - 60;
-                const x = Math.cos((angle * Math.PI) / 180) * 140;
-                const y = Math.sin((angle * Math.PI) / 180) * 140;
-                
-                return (
-                  <div
-                    key={testimonial.id}
-                    className="absolute w-20 h-20 rounded-full overflow-hidden cursor-pointer hover:scale-110 transition-transform"
-                    style={{
-                      left: `calc(50% + ${x}px - 40px)`,
-                      top: `calc(50% + ${y}px - 40px)`,
-                    }}
-                    onClick={() => dispatch(setCurrentTestimonial(index))}
-                  >
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                );
-              })}
+              {/* Surrounding client images - Hidden on mobile */}
+              <div className="mobile-hidden">
+                {testimonials.map((testimonial, index) => {
+                  if (index === currentTestimonial) return null;
+                  const angle = (index * 120) - 60;
+                  const radian = (angle * Math.PI) / 180;
+                  const radius = 140;
+                  const x = Math.cos(radian) * radius;
+                  const y = Math.sin(radian) * radius;
+                  
+                  return (
+                    <div
+                      key={testimonial.id}
+                      className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-white shadow-lg cursor-pointer transition-transform duration-300 hover:scale-110"
+                      style={{
+                        transform: `translate(${x}px, ${y}px)`,
+                        top: '50%',
+                        left: '50%',
+                        marginTop: '-2rem',
+                        marginLeft: '-2rem',
+                      }}
+                      onClick={() => dispatch(setCurrentTestimonial(index))}
+                    >
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           {/* Right Side - Testimonial Content */}
-          <div className="text-center lg:text-left">
-            <div className="mb-8">
-              <Quote className="w-12 h-12 text-primary-600 mb-6 mx-auto lg:mx-0" />
-              <blockquote className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
+          <div className="testimonial-card">
+            <div className="mb-6 sm:mb-8">
+              <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-primary-600 mb-4 sm:mb-6" />
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-6 sm:mb-8">
                 "{currentTest.quote}"
-              </blockquote>
-            </div>
-
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                {currentTest.name}
-              </h3>
-              <p className="text-gray-600 text-lg">
-                {currentTest.position}
               </p>
+              <div className="flex items-center space-x-4">
+                <img
+                  src={currentTest.image}
+                  alt={currentTest.name}
+                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900">
+                    {currentTest.name}
+                  </h4>
+                  <p className="text-sm sm:text-base text-gray-600">
+                    {currentTest.position}
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-center lg:justify-start space-x-4">
-              <button
-                onClick={prevTestimonial}
-                className="w-12 h-12 bg-gray-200 hover:bg-primary-600 hover:text-white rounded-full flex items-center justify-center transition-colors"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={nextTestimonial}
-                className="w-12 h-12 bg-primary-600 text-white hover:bg-primary-700 rounded-full flex items-center justify-center transition-colors"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+            <div className="flex items-center justify-between">
+              <div className="flex space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => dispatch(setCurrentTestimonial(index))}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 ${
+                      index === currentTestimonial ? 'bg-primary-600' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <div className="flex space-x-2">
+                <button
+                  onClick={prevTestimonial}
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
+                >
+                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+                <button
+                  onClick={nextTestimonial}
+                  className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
+                >
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+              </div>
             </div>
           </div>
         </div>

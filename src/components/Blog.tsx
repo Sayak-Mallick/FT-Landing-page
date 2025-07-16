@@ -33,75 +33,76 @@ const Blog: React.FC = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute left-0 top-0 w-64 h-full opacity-5">
-        <div className="grid grid-cols-8 gap-1 h-full">
+    <section id="blog" className="section-padding bg-white relative overflow-hidden">
+      {/* Background Pattern - Hidden on mobile */}
+      <div className="absolute left-0 top-0 w-32 sm:w-48 md:w-64 h-full opacity-5 mobile-hidden">
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-1 h-full">
           {Array.from({ length: 200 }).map((_, i) => (
             <div key={i} className="w-1 h-2 bg-primary-600 transform rotate-45"></div>
           ))}
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container-responsive relative">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-primary-600 text-xl font-medium mb-4 block">Our Blog</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="text-primary-600 text-lg sm:text-xl font-medium mb-3 sm:mb-4 block">Our Blog</span>
+          <h2 className="text-section-title font-bold text-gray-900">
             Latest News From Our Blog
           </h2>
         </div>
 
         {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="projects-grid">
           {blogPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+              className="blog-card"
             >
               <div className="relative">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-64 object-cover"
+                  className="blog-card-image"
                 />
                 
                 {/* Date Badge */}
-                <div className="absolute top-4 right-4">
-                  <div className="bg-primary-600 text-white px-3 py-1 rounded-t-lg text-center">
-                    <div className="text-sm font-bold">{post.month}</div>
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <div className="bg-primary-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-t-lg text-center">
+                    <div className="text-xs sm:text-sm font-bold">{post.month}</div>
                   </div>
-                  <div className="bg-white text-primary-900 px-3 py-2 rounded-b-lg text-center shadow-lg">
-                    <div className="text-xl font-bold">{post.date}</div>
+                  <div className="bg-white text-primary-900 px-2 py-1 sm:px-3 sm:py-2 rounded-b-lg text-center shadow-lg">
+                    <div className="text-lg sm:text-xl font-bold">{post.date}</div>
                   </div>
                 </div>
               </div>
               
-              <div className="p-6">
-                <div className="flex items-center text-gray-500 text-sm mb-4">
-                  <User className="w-4 h-4 mr-2" />
-                  <span>{post.author}</span>
-                </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight hover:text-primary-600 transition-colors">
-                  <a href="#" className="hover:underline">
-                    {post.title}
-                  </a>
+              <div className="blog-card-content">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 hover:text-primary-600 transition-colors duration-200">
+                  {post.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6 flex-grow">
                   {post.excerpt}
                 </p>
                 
-                <div className="w-6 h-0.5 bg-gray-900"></div>
+                <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100">
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <User className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
+                    <span className="text-gray-600 text-sm sm:text-base">{post.author}</span>
+                  </div>
+                  <button className="text-primary-600 hover:text-primary-700 font-medium text-sm sm:text-base transition-colors duration-200">
+                    Read More
+                  </button>
+                </div>
               </div>
             </article>
           ))}
         </div>
 
         {/* View More Button */}
-        <div className="text-center mt-12">
-          <button className="bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-colors duration-300 transform hover:scale-105">
+        <div className="text-center mt-8 sm:mt-12">
+          <button className="bg-primary-600 text-white btn-responsive hover:bg-primary-700 transition-colors duration-300 transform hover:scale-105">
             View All Posts
           </button>
         </div>
